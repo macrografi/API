@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 //model
-const Product = require('../model/product');
-const Carousel = require('../model/carousel');
+const Product = require("../model/product");
+const Carousel = require("../model/carousel");
 
 //product post
-router.post('/add', async (req, res) => {
+router.post("/add", async (req, res) => {
   let product = new Product(req.body);
 
   product.save((err, result) => {
@@ -18,14 +18,14 @@ router.post('/add', async (req, res) => {
 });
 
 //product get
-router.get('/products', async (req, res) => {
+router.get("/products", async (req, res) => {
   let product = await Product.find({});
   res.send(product);
   // Api.find({}).then(res.send(api.js)).catch(err => res.status(500).json({ message: "Error", error: err }));
 });
 
 //carousel post
-router.post('/addCarousel', async (req, res) => {
+router.post("/addCarousel", async (req, res) => {
   let carousel = new Carousel(req.body);
 
   carousel.save((err, result) => {
@@ -37,7 +37,7 @@ router.post('/addCarousel', async (req, res) => {
 });
 
 //carousel get
-router.get('/carousels', async (req, res) => {
+router.get("/carousels", async (req, res) => {
   let carousel = await Carousel.find({});
   res.send(carousel);
 });
