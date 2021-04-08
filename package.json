@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "gulp",
     "start": "node app.js"
   },
   "author": "",
